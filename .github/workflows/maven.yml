@@ -24,3 +24,8 @@ jobs:
       run: mvn clean package -DskipTest=true
     - name: 列出文件
       run: ls target/*.jar
+    - uses: actions/checkout@v2
+    - name: 构建镜像
+      run: docker build -t test:$(date +%s) .
+    - name: 查看镜像
+      run: docker images
