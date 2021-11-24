@@ -26,7 +26,6 @@ jobs:
       run: |
         ls
         ls target/*.jar
-    - uses: actions/checkout@v2
     - name: 构建镜像
       run: docker build -t test:$(date +%s) .
     - name: 查看镜像
